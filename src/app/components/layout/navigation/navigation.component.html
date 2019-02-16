@@ -1,0 +1,35 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [fixedInViewport]="true"
+    [attr.role]="(isMobile | async) ? 'dialog' : 'navigation'"
+    [mode]="(isMobile | async) ? 'over' : 'side'"
+    [opened]="!(isMobile | async)"
+  >
+    <!-- Default navigation options -->
+    <mat-nav-list *ngIf="!(isAdminPage | async)">
+      <a mat-list-item routerLink="events">
+        <mat-icon>event_note</mat-icon>
+        Evenemang
+      </a>
+      <a mat-list-item routerLink="bookings">
+        <mat-icon>today</mat-icon>
+        Bokningsportal
+      </a>
+      <a mat-list-item routerLink="organisations">
+        <mat-icon>group</mat-icon>
+        Organisationer
+      </a>
+      <a mat-list-item routerLink="sponsors">
+        <mat-icon>business</mat-icon>
+        Sponsorer
+      </a>
+      <h3>KONTO</h3>
+      <a mat-list-item routerLink="">
+        <mat-icon>exit_to_app</mat-icon>
+        Logga ut
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
