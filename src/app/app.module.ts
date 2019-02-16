@@ -16,9 +16,9 @@ import {
 @NgModule({
   declarations: [
     AppComponent,
+    NavigationComponent,
     ProductListComponent,
-    ProductComponent,
-    NavigationComponent
+    ProductComponent
   ],
   imports: [
     BrowserModule,
