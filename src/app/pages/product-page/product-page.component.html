@@ -2,14 +2,18 @@
   fxLayout="row wrap"
   fxLayout.xs="column"
   fxLayout.sm="column"
-  fxLayoutGap="32px"
+  fxLayoutGap="2em"
   fxLayoutAlign="center center"
+  class="container"
 >
-  <mat-card>
+  <mat-card fxFlex="1 1 calc(50% - 2em)" class="form-container">
     <mat-card-title style="text-align: center">Produkter</mat-card-title>
-    <app-product-list></app-product-list>
+    <app-product-list [products]="products"></app-product-list>
   </mat-card>
-  <mat-card>
-    <mat-card-title>Lägg till product</mat-card-title>
-  </mat-card>
+
+  <app-create-product-form
+    fxFlex="1 1 calc(50% - 2em)"
+    class="form-container"
+    (addProduct)="addProduct($event)"
+  ></app-create-product-form>
 </div>

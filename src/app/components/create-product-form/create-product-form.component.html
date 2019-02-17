@@ -1,0 +1,36 @@
+<mat-card fxFlex="1 1 calc(50% - 2em)">
+  <mat-card-title>Lägg till produkt</mat-card-title>
+  <form (ngSubmit)="onSubmit()" class="form-container">
+    <mat-form-field>
+      <input
+        matInput
+        name="title"
+        [(ngModel)]="title"
+        placeholder="Produktnamn"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        name="productNumber"
+        [(ngModel)]="productNumber"
+        placeholder="Produktnummer"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        name="price"
+        [(ngModel)]="price"
+        placeholder="Pris"
+        type="number"
+      />
+      <span matSuffix>SEK</span>
+    </mat-form-field>
+    <div style="text-align: center">
+      <button mat-raised-button color="primary" type="submit">
+        Lägg till
+      </button>
+    </div>
+  </form>
+</mat-card>

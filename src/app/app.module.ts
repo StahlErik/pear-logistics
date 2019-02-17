@@ -8,6 +8,7 @@ import { ProductComponent } from './components/product/product.component';
 import { NavigationComponent } from './components/layout/navigation/navigation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 import {
   MatSidenavModule,
@@ -15,9 +16,13 @@ import {
   MatListModule,
   MatCardModule,
   MatToolbarModule,
-  MatButtonModule
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatNativeDateModule
 } from '@angular/material';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { CreateProductFormComponent } from './components/create-product-form/create-product-form.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +30,15 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     NavigationComponent,
     ProductListComponent,
     ProductComponent,
-    ProductPageComponent
+    ProductPageComponent,
+    CreateProductFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    FormsModule,
 
     //Material
     MatSidenavModule,
@@ -39,7 +46,10 @@ import { ProductPageComponent } from './pages/product-page/product-page.componen
     MatListModule,
     MatCardModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
