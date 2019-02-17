@@ -14,12 +14,16 @@ export class ProductPageComponent implements OnInit {
   constructor(private logisticsService: LogisticsService) {}
 
   ngOnInit() {
-    this.products = [
+    this.logisticsService.getProducts().subscribe(products => {
+      this.products = products;
+    });
+  }
+
+  /* this.products = [
       { id: 1, productNumber: 'P001', title: 'jTelefon', price: 8900 },
       { id: 2, productNumber: 'P002', title: 'jPlatta', price: 5700 },
       { id: 3, productNumber: 'P003', title: 'Päronklocka', price: 11000 }
-    ];
-  }
+    ]; */
 
   addProduct(product: Product) {
     this.logisticsService.addProduct(product).subscribe(product => {

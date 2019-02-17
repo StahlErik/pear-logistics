@@ -23,6 +23,9 @@ import {
 } from '@angular/material';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CreateProductFormComponent } from './components/create-product-form/create-product-form.component';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from './environment';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { CreateProductFormComponent } from './components/create-product-form/cre
     BrowserAnimationsModule,
     FlexLayoutModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
 
     //Material
     MatSidenavModule,
@@ -51,7 +55,7 @@ import { CreateProductFormComponent } from './components/create-product-form/cre
     MatInputModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

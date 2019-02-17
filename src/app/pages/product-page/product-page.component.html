@@ -3,7 +3,7 @@
   fxLayout.xs="column"
   fxLayout.sm="column"
   fxLayoutGap="2em"
-  fxLayoutAlign="center center"
+  fxLayoutAlign="center"
   class="container"
 >
   <mat-card fxFlex="1 1 calc(50% - 2em)" class="form-container">
@@ -15,5 +15,6 @@
     fxFlex="1 1 calc(50% - 2em)"
     class="form-container"
     (addProduct)="addProduct($event)"
+    style="max-height: 392.5px"
   ></app-create-product-form>
 </div>

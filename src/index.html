@@ -1,14 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>PearLogistics</title>
-  <base href="/">
+  <head>
+    <meta charset="utf-8" />
+    <title>PearLogistics</title>
+    <base href="/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>
+
+<script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: 'AIzaSyD6HvJ7EBodfx4oB3d3PVL47l4E-3KMVHM',
+    authDomain: 'pear-logistics.firebaseapp.com',
+    databaseURL: 'https://pear-logistics.firebaseio.com',
+    projectId: 'pear-logistics',
+    storageBucket: 'pear-logistics.appspot.com',
+    messagingSenderId: '293220962963'
+  };
+  firebase.initializeApp(config);
+</script>
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>

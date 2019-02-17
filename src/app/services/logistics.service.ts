@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Product } from '../models/Product';
+import { FirestoreService } from './firestore.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LogisticsService {
-  constructor() {}
+  private readonly productsPath = 'products';
+  constructor(private firestoreService: FirestoreService<Product>) {}
 
-  // Add Todo
+  // Get Product
+  getProducts(): Observable<Product[]> {
+    return this.firestoreService.list(this.productsPath);
+  }
+
+  // Add Product
   addProduct(product: Product): Observable<Product> {
-    console.log('Serviceprovider');
-    console.log(product);
     return of(product);
   }
 }
