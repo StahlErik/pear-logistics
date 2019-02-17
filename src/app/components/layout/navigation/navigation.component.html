@@ -1,3 +1,10 @@
+<header>
+  <mat-toolbar color="{{ 'primary' }}">
+    <button type="button" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+</header>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
@@ -9,27 +16,34 @@
   >
     <!-- Default navigation options -->
     <mat-nav-list>
-      <a mat-list-item>
-        <mat-icon>event_note</mat-icon>
-        Evenemang
+      <a mat-list-item routerLink="">
+        <mat-icon>dashboard</mat-icon>
+        Översikt
       </a>
       <a mat-list-item>
-        <mat-icon>today</mat-icon>
-        Bokningsportal
+        <mat-icon>local_shipping</mat-icon>
+        In- och utleveranser
       </a>
-      <a mat-list-item>
-        <mat-icon>group</mat-icon>
-        Organisationer
+      <a mat-list-item routerLink="product-page">
+        <mat-icon>smartphone</mat-icon>
+        Produkter
       </a>
       <a mat-list-item>
         <mat-icon>business</mat-icon>
-        Sponsorer
+        Färdigvarulager
       </a>
-      <h3>KONTO</h3>
-      <a mat-list-item>
-        <mat-icon>exit_to_app</mat-icon>
-        Logga ut
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
+    </mat-nav-list> </mat-sidenav
+  ><mat-sidenav-content>
+    <article>
+      <!-- Content -->
+      <main>
+        <ng-content></ng-content>
+      </main>
+
+      <!--Footer-->
+      <!-- <footer>
+        <app-footer></app-footer>
+      </footer> -->
+    </article>
+  </mat-sidenav-content>
 </mat-sidenav-container>
