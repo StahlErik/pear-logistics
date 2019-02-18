@@ -6,7 +6,7 @@
       .substr(0, 15)
   }}</span>
   <ng-template #filler>
-    <span>Har ej {{ incoming ? 'anlänt' : 'skickats' }}</span>
+    <span>Har ej {{ shipping.incoming ? 'anlänt' : 'skickats' }}</span>
   </ng-template>
   <span>{{ product.title }}</span>
   <span>{{ warehouse.city }}</span>
@@ -14,6 +14,12 @@
     {{ shipping.units }}
     <mat-icon (click)="onEdit(shipping)" style="padding-left: 0.5em">
       create</mat-icon
+    >
+    <mat-icon
+      style="padding-left: 0.5em"
+      [ngStyle]="{ color: shipping.incoming ? 'green' : 'red' }"
+    >
+      {{ shipping.incoming ? 'arrow_downward' : 'arrow_upward' }}</mat-icon
     >
   </span>
 </div>
