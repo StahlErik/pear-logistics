@@ -15,7 +15,11 @@ export class ShippingPageComponent implements OnInit {
 
   addSortedShippings(shippings) {
     shippings.sort(function(a, b) {
-      return a.units - b.units;
+      if (b.date && a.date) {
+        return b.date - a.date;
+      } else {
+        return b.units - a.units;
+      }
     });
     this.shippings = shippings;
   }

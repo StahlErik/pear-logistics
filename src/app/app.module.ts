@@ -23,7 +23,8 @@ import {
   MatSelectModule,
   MatSlideToggleModule,
   MatCheckboxModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatTableModule
 } from '@angular/material';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CreateProductFormComponent } from './components/create-product-form/create-product-form.component';
@@ -77,7 +78,8 @@ import { ShippingPageComponent } from './pages/shipping-page/shipping-page.compo
     MatSelectModule,
     MatSlideToggleModule,
     MatCheckboxModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatTableModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

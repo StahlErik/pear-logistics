@@ -7,7 +7,9 @@
   class="container"
 >
   <mat-card fxFlex="1 1 calc(50% - 2em)" class="form-container">
-    <mat-card-title style="text-align: center">Färdigvarulager</mat-card-title>
+    <mat-card-title style="text-align: center"
+      >In- och utleveranser</mat-card-title
+    >
     <app-shipping-list
       (editShipping2)="editShipping2($event)"
       [shippings]="shippings"

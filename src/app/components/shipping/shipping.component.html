@@ -1,13 +1,16 @@
-<div class="shipping-line" style="padding: 2em">
-  <span>{{
+<div class="shipping-line">
+  <span *ngIf="shipping.date; else filler">{{
     shipping.date
       .toDate()
       .toString()
       .substr(0, 15)
   }}</span>
-  <span>{{ product.title ? product.title : '' }}</span>
-  <span>{{ warehouse.city ? warehouse.city : '' }}</span>
-  <span style="float: right">
+  <ng-template #filler>
+    <span>Har ej {{ incoming ? 'anlänt' : 'skickats' }}</span>
+  </ng-template>
+  <span>{{ product.title }}</span>
+  <span>{{ warehouse.city }}</span>
+  <span>
     {{ shipping.units }}
     <mat-icon (click)="onEdit(shipping)" style="padding-left: 0.5em">
       create</mat-icon

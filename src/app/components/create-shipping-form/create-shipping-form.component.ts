@@ -67,10 +67,8 @@ export class CreateShippingFormComponent implements OnInit {
   }
 
   onSubmit() {
-    //this.productID = this.product.id;
-    //this.warehouseID = this.warehouse.id;
     const addShipping = {
-      date: this.date,
+      date: this.date ? this.date : null,
       product: this.product,
       warehouse: this.warehouse,
       units: this.units,

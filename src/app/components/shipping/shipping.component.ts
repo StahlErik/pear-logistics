@@ -32,7 +32,7 @@ export class ShippingComponent implements OnInit {
         this.warehouse = res;
         //console.log(res);
       });
-    console.log(this.shipping.date);
+    //console.log(this.shipping.date);
     //console.log(this.shipping.date.getDay);
     //console.log(this.shipping.date.getFullYear());
   }
