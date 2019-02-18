@@ -54,7 +54,7 @@ export class CreateProductFormComponent implements OnInit {
     };
     this.logisticsService.getProduct(this.currentID).subscribe(res => {
       if (res) {
-        this.logisticsService.editProduct(this.currentID, editProduct);
+        this.logisticsService.editProduct(editProduct.id, editProduct);
       } else {
         this.addProduct.emit(addProduct);
       }
@@ -64,12 +64,12 @@ export class CreateProductFormComponent implements OnInit {
   }
 
   clearForm() {
-    this.title = '';
-    this.productNumber = '';
+    this.title = null;
+    this.productNumber = null;
     this.price = null;
-    this.clearText = '';
-    this.deleteText = '';
-    this.currentID = '';
+    this.clearText = null;
+    this.deleteText = null;
+    this.currentID = null;
     this.buttonText = 'Lägg till';
     this.formTitle = 'Lägg till produkt';
   }

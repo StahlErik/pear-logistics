@@ -1,0 +1,24 @@
+<div
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayout.sm="column"
+  fxLayoutGap="2em"
+  fxLayoutAlign="center"
+  class="container"
+>
+  <mat-card fxFlex="1 1 calc(50% - 2em)" class="form-container">
+    <mat-card-title style="text-align: center">Färdigvarulager</mat-card-title>
+    <app-warehouse-list
+      (editWarehouse2)="editWarehouse2($event)"
+      [warehouses]="warehouses"
+    ></app-warehouse-list>
+  </mat-card>
+
+  <app-create-warehouse-form
+    fxFlex="1 1 calc(50% - 2em)"
+    class="form-container"
+    (addWarehouse)="addWarehouse($event)"
+    style="max-height: 392.5px"
+    [editWarehouse]="editWarehouse"
+  ></app-create-warehouse-form>
+</div>

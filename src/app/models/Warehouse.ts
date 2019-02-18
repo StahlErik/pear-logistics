@@ -1,4 +1,5 @@
-export class warehouse {
-  id: number;
+export class Warehouse {
+  id: string;
+  cityNumber: number;
   city: string;
 }

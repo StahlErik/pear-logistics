@@ -1,0 +1,45 @@
+<mat-card fxFlex="1 1 calc(50% - 2em)" style="max-height: 392.5px">
+  <mat-card-title>{{ formTitle }}</mat-card-title>
+  <form (ngSubmit)="onSubmit()" class="form-container">
+    <mat-form-field>
+      <input matInput name="city" [(ngModel)]="city" placeholder="Stad" />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        name="cityNumber"
+        [(ngModel)]="cityNumber"
+        placeholder="Stadsnummer"
+      />
+    </mat-form-field>
+    <div style="text-align: center;">
+      <button
+        mat-raised-button
+        color="primary"
+        style="margin: 0.5em"
+        type="submit"
+      >
+        {{ buttonText }}
+      </button>
+      <button
+        *ngIf="clearText"
+        type="button"
+        mat-raised-button
+        style="background-color:lightblue; margin: 0.5em"
+        (click)="clearForm()"
+      >
+        {{ clearText }}
+      </button>
+      <button
+        *ngIf="deleteText"
+        type="button"
+        mat-raised-button
+        style="margin: 0.5em"
+        color="warn"
+        (click)="deleteWarehouse()"
+      >
+        {{ deleteText }}
+      </button>
+    </div>
+  </form>
+</mat-card>

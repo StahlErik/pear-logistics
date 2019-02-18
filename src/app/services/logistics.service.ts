@@ -31,8 +31,4 @@ export class LogisticsService {
   deleteProduct(id: string) {
     return this.firestoreService.delete(this.productsPath, id);
   }
-
-  /*   editProduct(product: Product): Observable<Product> {
-    return product;
-  } */
 }

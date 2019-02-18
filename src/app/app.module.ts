@@ -26,6 +26,10 @@ import { CreateProductFormComponent } from './components/create-product-form/cre
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from './environment';
+import { WarehousePageComponent } from './pages/warehouse-page/warehouse-page.component';
+import { WarehouseComponent } from './components/warehouse/warehouse.component';
+import { WarehouseListComponent } from './components/warehouse-list/warehouse-list.component';
+import { CreateWarehouseFormComponent } from './components/create-warehouse-form/create-warehouse-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { environment } from './environment';
     ProductListComponent,
     ProductComponent,
     ProductPageComponent,
-    CreateProductFormComponent
+    CreateProductFormComponent,
+    WarehousePageComponent,
+    WarehouseComponent,
+    WarehouseListComponent,
+    CreateWarehouseFormComponent
   ],
   imports: [
     BrowserModule,
