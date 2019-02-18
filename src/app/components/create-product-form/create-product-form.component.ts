@@ -9,7 +9,10 @@ import { LogisticsService } from '../../services/logistics.service';
 })
 export class CreateProductFormComponent implements OnInit {
   buttonText: String;
+  clearText: String;
+  deleteText: String;
   currentID: string;
+  formTitle: string;
 
   constructor(private logisticsService: LogisticsService) {}
 
@@ -20,6 +23,9 @@ export class CreateProductFormComponent implements OnInit {
       this.productNumber = editProduct.productNumber;
       this.price = editProduct.price;
       this.buttonText = 'Ändra';
+      this.clearText = 'Rensa';
+      this.deleteText = 'Ta bort produkt';
+      this.formTitle = 'Redigera produkt';
       this.currentID = editProduct.id;
     }
   }
@@ -31,6 +37,7 @@ export class CreateProductFormComponent implements OnInit {
 
   ngOnInit() {
     this.buttonText = 'Lägg till';
+    this.formTitle = 'Lägg till Produkt';
   }
 
   onSubmit() {
@@ -60,5 +67,15 @@ export class CreateProductFormComponent implements OnInit {
     this.title = '';
     this.productNumber = '';
     this.price = null;
+    this.clearText = '';
+    this.deleteText = '';
+    this.currentID = '';
+    this.buttonText = 'Lägg till';
+    this.formTitle = 'Lägg till produkt';
+  }
+
+  deleteProduct() {
+    this.logisticsService.deleteProduct(this.currentID);
+    this.clearForm();
   }
 }

@@ -28,6 +28,10 @@ export class LogisticsService {
     return this.firestoreService.update(this.productsPath, id, product);
   }
 
+  deleteProduct(id: string) {
+    return this.firestoreService.delete(this.productsPath, id);
+  }
+
   /*   editProduct(product: Product): Observable<Product> {
     return product;
   } */

@@ -30,6 +30,10 @@ export class FirestoreService<Item> {
     return this.doc(path, id).update(item);
   }
 
+  delete(path: string, id: string): Promise<void> {
+    return this.doc(path, id).delete();
+  }
+
   colWithIds(path: string, queryFn?: QueryFn): Observable<Item[]> {
     return this.col(path, queryFn)
       .snapshotChanges()
