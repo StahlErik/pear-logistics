@@ -26,6 +26,10 @@ export class FirestoreService<Item> {
     return this.colWithIds(path, queryFn);
   }
 
+  update(path: string, id: string, item: Item): Promise<void> {
+    return this.doc(path, id).update(item);
+  }
+
   colWithIds(path: string, queryFn?: QueryFn): Observable<Item[]> {
     return this.col(path, queryFn)
       .snapshotChanges()

@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ProductListComponent } from '../../components/product-list/product-list.component';
 import { Product } from 'src/app/models/Product';
 import { LogisticsService } from 'src/app/services/logistics.service';
 
@@ -10,6 +9,7 @@ import { LogisticsService } from 'src/app/services/logistics.service';
 })
 export class ProductPageComponent implements OnInit {
   products: Product[];
+  editProduct: Product;
 
   constructor(private logisticsService: LogisticsService) {}
 
@@ -37,5 +37,9 @@ export class ProductPageComponent implements OnInit {
     this.logisticsService.getProducts().subscribe(products => {
       this.addSortedProducts(products);
     });
+  }
+
+  editProduct2(product: Product) {
+    this.editProduct = product;
   }
 }

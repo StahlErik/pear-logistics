@@ -19,4 +19,16 @@ export class LogisticsService {
   addProduct(product: Product) {
     return this.firestoreService.insert(this.productsPath, product);
   }
+
+  getProduct(id: string): Observable<Product> {
+    return this.firestoreService.get(this.productsPath, id);
+  }
+
+  editProduct(id: string, product: Product) {
+    return this.firestoreService.update(this.productsPath, id, product);
+  }
+
+  /*   editProduct(product: Product): Observable<Product> {
+    return product;
+  } */
 }

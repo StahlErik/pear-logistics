@@ -8,7 +8,10 @@
 >
   <mat-card fxFlex="1 1 calc(50% - 2em)" class="form-container">
     <mat-card-title style="text-align: center">Produkter</mat-card-title>
-    <app-product-list [products]="products"></app-product-list>
+    <app-product-list
+      (editProduct2)="editProduct2($event)"
+      [products]="products"
+    ></app-product-list>
   </mat-card>
 
   <app-create-product-form
@@ -16,5 +19,6 @@
     class="form-container"
     (addProduct)="addProduct($event)"
     style="max-height: 392.5px"
+    [editProduct]="editProduct"
   ></app-create-product-form>
 </div>
