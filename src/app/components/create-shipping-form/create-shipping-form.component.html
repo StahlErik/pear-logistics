@@ -1,0 +1,84 @@
+<mat-card fxFlex="1 1 calc(50% - 2em)" style="max-height: 392.5px">
+  <mat-card-title>{{ formTitle }}</mat-card-title>
+  <form (ngSubmit)="onSubmit()" class="form-container">
+    <mat-form-field>
+      <mat-select placeholder="Produkt" [(ngModel)]="product" name="products">
+        <mat-option *ngFor="let product of products" [value]="product.title">
+          {{ product.title }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select
+        placeholder="Färdigvarulager"
+        [(ngModel)]="warehouse"
+        name="warehouses"
+      >
+        <mat-option
+          *ngFor="let warehouse of warehouses"
+          [value]="warehouse.city"
+        >
+          {{ warehouse.city }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        name="units"
+        [(ngModel)]="units"
+        placeholder="Antal"
+        type="number"
+      />
+      <span matSuffix>Enheter</span>
+    </mat-form-field>
+    <mat-slide-toggle [(ngModel)]="incoming" name="incoming">
+      {{ incoming ? 'Inkommande leverans' : 'Utgående leverans' }}
+    </mat-slide-toggle>
+    <mat-checkbox [(ngModel)]="arrived" name="arrived" style="margin-top: 1em">
+      Har varorna {{ incoming ? 'anlänt' : 'skickats' }}?
+    </mat-checkbox>
+    <mat-form-field *ngIf="arrived">
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="date"
+        name="date"
+        placeholder="När?"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Buttons -->
+    <div style="text-align: center;">
+      <button
+        mat-raised-button
+        color="primary"
+        style="margin: 0.5em"
+        type="submit"
+      >
+        {{ buttonText }}
+      </button>
+      <button
+        *ngIf="clearText"
+        type="button"
+        mat-raised-button
+        style="background-color:lightblue; margin: 0.5em"
+        (click)="clearForm()"
+      >
+        {{ clearText }}
+      </button>
+      <button
+        *ngIf="deleteText"
+        type="button"
+        mat-raised-button
+        style="margin: 0.5em"
+        color="warn"
+        (click)="deleteProduct()"
+      >
+        {{ deleteText }}
+      </button>
+    </div>
+  </form>
+</mat-card>

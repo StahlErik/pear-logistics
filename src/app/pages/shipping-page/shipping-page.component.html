@@ -1,0 +1,24 @@
+<div
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayout.sm="column"
+  fxLayoutGap="2em"
+  fxLayoutAlign="center"
+  class="container"
+>
+  <mat-card fxFlex="1 1 calc(50% - 2em)" class="form-container">
+    <mat-card-title style="text-align: center">Färdigvarulager</mat-card-title>
+    <app-shipping-list
+      (editShipping2)="editShipping2($event)"
+      [shippings]="shippings"
+    ></app-shipping-list>
+  </mat-card>
+
+  <app-create-shipping-form
+    fxFlex="1 1 calc(50% - 2em)"
+    class="form-container"
+    (addShipping)="addShipping($event)"
+    style="max-height: 392.5px"
+    [editShipping]="editShipping"
+  ></app-create-shipping-form>
+</div>

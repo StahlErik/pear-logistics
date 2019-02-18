@@ -19,7 +19,11 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatSelectModule,
+  MatSlideToggleModule,
+  MatCheckboxModule,
+  MatDatepickerModule
 } from '@angular/material';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { CreateProductFormComponent } from './components/create-product-form/create-product-form.component';
@@ -30,6 +34,10 @@ import { WarehousePageComponent } from './pages/warehouse-page/warehouse-page.co
 import { WarehouseComponent } from './components/warehouse/warehouse.component';
 import { WarehouseListComponent } from './components/warehouse-list/warehouse-list.component';
 import { CreateWarehouseFormComponent } from './components/create-warehouse-form/create-warehouse-form.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
+import { ShippingListComponent } from './components/shipping-list/shipping-list.component';
+import { CreateShippingFormComponent } from './components/create-shipping-form/create-shipping-form.component';
+import { ShippingPageComponent } from './pages/shipping-page/shipping-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,11 @@ import { CreateWarehouseFormComponent } from './components/create-warehouse-form
     WarehousePageComponent,
     WarehouseComponent,
     WarehouseListComponent,
-    CreateWarehouseFormComponent
+    CreateWarehouseFormComponent,
+    ShippingComponent,
+    ShippingListComponent,
+    CreateShippingFormComponent,
+    ShippingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +73,11 @@ import { CreateWarehouseFormComponent } from './components/create-warehouse-form
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    MatDatepickerModule
   ],
   providers: [AngularFirestore],
   bootstrap: [AppComponent]

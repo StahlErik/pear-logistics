@@ -1,0 +1,21 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container {
+  width: 100%;
+}
+
+@media only screen and (min-width: 450px) {
+  // desktop
+  /deep/ .container {
+    margin: 2em !important;
+  }
+}
+@media only screen and (max-width: 450px) {
+  // mobile
+  /deep/ .container {
+    margin: 1em !important;
+  }
+}
