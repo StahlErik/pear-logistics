@@ -16,7 +16,7 @@ export class LogisticsService {
   }
 
   // Add Product
-  addProduct(product: Product): Observable<Product> {
-    return of(product);
+  addProduct(product: Product) {
+    return this.firestoreService.insert(this.productsPath, product);
   }
 }
