@@ -1,7 +1,14 @@
 <div class="shipping-line" style="padding: 2em">
-  <span style="float: left">{{ shipping.date }}</span>
+  <span>{{
+    shipping.date
+      .toDate()
+      .toString()
+      .substr(0, 15)
+  }}</span>
+  <span>{{ product.title ? product.title : '' }}</span>
+  <span>{{ warehouse.city ? warehouse.city : '' }}</span>
   <span style="float: right">
-    {{ shipping.product }}
+    {{ shipping.units }}
     <mat-icon (click)="onEdit(shipping)" style="padding-left: 0.5em">
       create</mat-icon
     >

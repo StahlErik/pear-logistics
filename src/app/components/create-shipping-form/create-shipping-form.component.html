@@ -3,7 +3,7 @@
   <form (ngSubmit)="onSubmit()" class="form-container">
     <mat-form-field>
       <mat-select placeholder="Produkt" [(ngModel)]="product" name="products">
-        <mat-option *ngFor="let product of products" [value]="product.title">
+        <mat-option *ngFor="let product of products" [value]="product.id">
           {{ product.title }}
         </mat-option>
       </mat-select>
@@ -14,10 +14,7 @@
         [(ngModel)]="warehouse"
         name="warehouses"
       >
-        <mat-option
-          *ngFor="let warehouse of warehouses"
-          [value]="warehouse.city"
-        >
+        <mat-option *ngFor="let warehouse of warehouses" [value]="warehouse.id">
           {{ warehouse.city }}
         </mat-option>
       </mat-select>

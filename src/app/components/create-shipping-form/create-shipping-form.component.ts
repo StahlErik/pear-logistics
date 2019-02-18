@@ -6,6 +6,7 @@ import { Warehouse } from 'src/app/models/Warehouse';
 import { LogisticsService } from 'src/app/services/logistics.service';
 import { Observable } from 'rxjs';
 import { WarehouseService } from 'src/app/services/warehouse.service';
+import { Timestamp } from 'rxjs/internal/operators/timestamp';
 
 @Component({
   selector: 'app-create-shipping-form',
@@ -35,6 +36,7 @@ export class CreateShippingFormComponent implements OnInit {
       this.warehouse = editShipping.warehouse;
       this.units = editShipping.units;
       this.arrived = editShipping.arrived;
+      this.incoming = editShipping.incoming;
       this.buttonText = 'Ändra';
       this.clearText = 'Rensa';
       this.deleteText = 'Ta bort leverans';
@@ -44,12 +46,14 @@ export class CreateShippingFormComponent implements OnInit {
   }
 
   @Output() addShipping: EventEmitter<any> = new EventEmitter();
-  date: Date;
-  product: Product;
-  warehouse: Warehouse;
+  date: Timestamp<Date>;
+  product: string;
+  //productID: string;
+  warehouse: string;
+  //warehouseID: string;
   units: number;
-  arrived: boolean;
-  incoming: boolean;
+  arrived: boolean = false;
+  incoming: boolean = false;
 
   ngOnInit() {
     this.buttonText = 'Lägg till';
@@ -63,6 +67,8 @@ export class CreateShippingFormComponent implements OnInit {
   }
 
   onSubmit() {
+    //this.productID = this.product.id;
+    //this.warehouseID = this.warehouse.id;
     const addShipping = {
       date: this.date,
       product: this.product,
@@ -80,6 +86,7 @@ export class CreateShippingFormComponent implements OnInit {
       incoming: this.incoming,
       id: this.currentID
     };
+    console.log(addShipping);
     this.shippingService.getShipping(this.currentID).subscribe(res => {
       if (res) {
         this.shippingService.editShipping(editShipping.id, editShipping);
@@ -96,7 +103,8 @@ export class CreateShippingFormComponent implements OnInit {
     this.product = null;
     this.warehouse = null;
     this.units = null;
-    this.arrived = null;
+    this.arrived = false;
+    this.incoming = false;
     this.clearText = null;
     this.deleteText = null;
     this.currentID = null;
