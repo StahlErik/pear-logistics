@@ -1,8 +1,12 @@
 <header>
-  <mat-toolbar color="{{ 'primary' }}">
+  <mat-toolbar
+    color="{{ 'primary' }}"
+    style="display:flex; justify-content: space-between"
+  >
     <button type="button" mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
+    <h1 style="float:right">PäronLogistik</h1>
   </mat-toolbar>
 </header>
 <mat-sidenav-container class="sidenav-container">
