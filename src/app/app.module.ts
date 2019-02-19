@@ -39,6 +39,8 @@ import { ShippingComponent } from './components/shipping/shipping.component';
 import { ShippingListComponent } from './components/shipping-list/shipping-list.component';
 import { CreateShippingFormComponent } from './components/create-shipping-form/create-shipping-form.component';
 import { ShippingPageComponent } from './pages/shipping-page/shipping-page.component';
+import { OverviewPageComponent } from './pages/overview-page/overview-page.component';
+import { ShippingBalanceComponent } from './components/shipping-balance/shipping-balance.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { ShippingPageComponent } from './pages/shipping-page/shipping-page.compo
     ShippingComponent,
     ShippingListComponent,
     CreateShippingFormComponent,
-    ShippingPageComponent
+    ShippingPageComponent,
+    OverviewPageComponent,
+    ShippingBalanceComponent
   ],
   imports: [
     BrowserModule,

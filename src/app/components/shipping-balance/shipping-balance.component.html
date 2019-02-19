@@ -1,0 +1,8 @@
+<mat-card>
+  <mat-card-title>Lagersaldo</mat-card-title>
+  <div *ngFor="let summedShipping of summedShippings" class="shipping-line">
+    <span>{{ summedShipping.product }}</span>
+    <span>{{ summedShipping.city }}</span>
+    <span>{{ summedShipping.amount }}</span>
+  </div>
+</mat-card>

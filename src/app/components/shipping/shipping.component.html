@@ -11,7 +11,7 @@
   <span>{{ product.title }}</span>
   <span>{{ warehouse.city }}</span>
   <span>
-    {{ shipping.units }}
+    {{ shipping.incoming ? '+' : '-' }} {{ shipping.units }}
     <mat-icon (click)="onEdit(shipping)" style="padding-left: 0.5em">
       create</mat-icon
     >
