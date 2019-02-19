@@ -8,8 +8,8 @@
   <ng-template #filler>
     <span>Har ej {{ shipping.incoming ? 'anlänt' : 'skickats' }}</span>
   </ng-template>
-  <span>{{ product.title }}</span>
-  <span>{{ warehouse.city }}</span>
+  <span>{{ product == undefined ? '' : product.title }}</span>
+  <span>{{ warehouse == undefined ? '' : warehouse.city }}</span>
   <span>
     {{ shipping.incoming ? '+' : '-' }} {{ shipping.units }}
     <mat-icon (click)="onEdit(shipping)" style="padding-left: 0.5em">

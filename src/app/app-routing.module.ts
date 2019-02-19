@@ -9,7 +9,7 @@ import { OverviewPageComponent } from './pages/overview-page/overview-page.compo
 const routes: Routes = [
   {
     path: '',
-    component: ProductListComponent
+    component: ShippingPageComponent
   },
   {
     path: 'product-page',
