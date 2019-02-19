@@ -1,5 +1,5 @@
 export class ProductCount {
-  city: String;
-  product: String;
+  city: string;
+  product: string;
   amount: number;
 }
